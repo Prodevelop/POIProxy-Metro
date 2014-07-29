@@ -10,7 +10,7 @@ define([
 		$,
 		NetworkManager,
 		$Isotope,
-		GeoLib){
+		geolib){
 
  	var Metro = function (localConfig) {
 		this.config = localConfig;
@@ -101,7 +101,7 @@ define([
 
 	 		// geolib as global in window
 	 		// getDistance(object start, object end[, int accuracy]) 		
-	 		distance = window.geolib.getDistance(startLocation, endLocation);
+	 		distance = geolib.getDistance(startLocation, endLocation);
 	 		if (!distance)
 	 			distance = 600;
 
