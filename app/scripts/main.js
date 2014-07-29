@@ -17,7 +17,7 @@ require.config({
 		'layout-mode': '../../bower_components/isotope/js/layout-mode',
 		vertical: '../../bower_components/isotope/js/layout-modes/vertical',
 		'fit-rows': '../../bower_components/isotope/js/layout-modes/fit-rows',
-		masonry: '../../bower_components/isotope/js/layout-modes/masonry',
+		masonry: '../../bower_components/isotope/js/layout-modes/masonry'
 
 	},
 	packages: [
