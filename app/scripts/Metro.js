@@ -268,8 +268,9 @@ define([
 	        if (id){
 	        	var data = that.features[id];
 	        	if (data) {
-	        		var url = that.getConfig().urls.mapService + '?data="' + JSON.stringify(data) + '"';
-	        		alert("link to: " + url);
+                    // var url = that.getConfig().urls.mapService + '?data="' + JSON.stringify(data) + '"';
+                    // alert("link to: " + url);
+                    var url = data.properties.image;
 	        		window.open(url);
 	        	} else {
 	        		console.warn("Metro -- Clicked Feature Data is null");
