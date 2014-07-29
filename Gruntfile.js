@@ -12,7 +12,7 @@ module.exports = function (grunt) {
     // Load grunt tasks automatically
     require('load-grunt-tasks')(grunt);
     grunt.loadNpmTasks('grunt-requirejs');
-    grunt.loadNpmTasks('grunt-bower-requirejs'); //Automagically wire-up installed Bower components into your RequireJS config
+    // grunt.loadNpmTasks('grunt-bower-requirejs'); //Automagically wire-up installed Bower components into your RequireJS config
 
     // Time how long tasks take. Can help when optimizing build times
     require('time-grunt')(grunt);
@@ -26,47 +26,47 @@ module.exports = function (grunt) {
     // Define the configuration for all the tasks
     grunt.initConfig({
 
-        // BOWER
-        bower: {
-            target: {
-              rjsConfig: '<%= config.app %>/scripts/main.js',
-              options: {
-                  // baseUrl: '<%= config.app %>/scripts'
-                }   
-            }
-        },
+        // // BOWER
+        // bower: {
+        //     all: {
+        //       rjsConfig: '<%= config.app %>/scripts/main.js',
+        //       options: {
+        //           // baseUrl: '<%= config.app %>/scripts'
+        //         }   
+        //     }
+        // },
         
 
-        // REQUIRE.JS config
-        requirejs: {
+        // // REQUIRE.JS config
+        // requirejs: {
 
-            compile: {
-                options: {
-                  baseUrl: '<%= config.app %>',
-                  mainConfigFile: '<%= config.app %>/scripts/main.js',
-                  name: 'main',
-                  out: '<%= config.dist %>/scripts/main-built.js'
-                }
-            },
+        //     compile: {
+        //         options: {
+        //           baseUrl: '<%= config.app %>',
+        //           mainConfigFile: '<%= config.app %>/scripts/main.js',
+        //           name: 'main',
+        //           out: '<%= config.dist %>/scripts/main-built.js'
+        //         }
+        //     },
 
-            dist: {
-                options: {
-                    // baseUrl: '<%= config.app %>',
-                    optimize: 'none',
-                    // // TODO: Figure out how to make sourcemaps work with grunt-usemin
-                    // // https://github.com/yeoman/grunt-usemin/issues/30
-                    // //generateSourceMaps: true,
-                    // // required to support SourceMaps
-                    // // http://requirejs.org/docs/errors.html#sourcemapcomments
-                    // preserveLicenseComments: false,
-                    // useStrict: true,
-                    wrap: true,
-                    name           : 'main',
-                    mainConfigFile : '<%= config.app %>/scripts/main.js',
-                    out: '<%= config.dist %>/scripts/main-built.js'    
-                }
-            }
-        },
+        //     dist: {
+        //         options: {
+        //             // baseUrl: '<%= config.app %>',
+        //             optimize: 'none',
+        //             // // TODO: Figure out how to make sourcemaps work with grunt-usemin
+        //             // // https://github.com/yeoman/grunt-usemin/issues/30
+        //             // //generateSourceMaps: true,
+        //             // // required to support SourceMaps
+        //             // // http://requirejs.org/docs/errors.html#sourcemapcomments
+        //             // preserveLicenseComments: false,
+        //             // useStrict: true,
+        //             wrap: true,
+        //             name           : 'main',
+        //             mainConfigFile : '<%= config.app %>/scripts/main.js',
+        //             out: '<%= config.dist %>/scripts/main-built.js'    
+        //         }
+        //     }
+        // },
 
 
         // Project settings
@@ -421,7 +421,7 @@ module.exports = function (grunt) {
         'useminPrepare',
         'concurrent:dist',
         'autoprefixer',
-        'requirejs:dist',
+        // 'requirejs:dist',
         'concat',
         'cssmin',
         'uglify',
