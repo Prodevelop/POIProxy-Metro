@@ -11,7 +11,7 @@ define([
 		$,
 		NetworkManager,
 		$Isotope,
-		GeoLib){
+		geolib){
 
  	var Metro = function (localConfig) {
 		this.config = localConfig;
@@ -102,7 +102,7 @@ define([
 
 	 		// geolib as global in window
 	 		// getDistance(object start, object end[, int accuracy]) 		
-	 		distance = window.geolib.getDistance(startLocation, endLocation);
+	 		distance = geolib.getDistance(startLocation, endLocation);
 	 		if (!distance)
 	 			distance = 600;
 
@@ -269,8 +269,9 @@ define([
 	        if (id){
 	        	var data = that.features[id];
 	        	if (data) {
-	        		var url = that.getConfig().urls.mapService + '?data="' + JSON.stringify(data) + '"';
-	        		alert("link to: " + url);
+                    // var url = that.getConfig().urls.mapService + '?data="' + JSON.stringify(data) + '"';
+                    // alert("link to: " + url);
+                    var url = data.properties.image;
 	        		window.open(url);
 	        	} else {
 	        		console.warn("Metro -- Clicked Feature Data is null");
