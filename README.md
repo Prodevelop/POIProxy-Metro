@@ -21,29 +21,11 @@ A multi-platform tiles viewer of Points of Interest with photo from POIProxy
 
 ## Important
 
-bower_dependencies/geolib/dist/geolib.js must be modified!
+***Grunt - Bower - Requirejs***
 
-at the end of the file replace last if with:
+There has been noticed a clear incompatibility among the latest versions of mentioned components so that distribution folder will not run properly. 
 
-```shell
-// Node module
-	if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
+Requirejs does not inyect our own modules in the single concated and minimized js file.
 
-		global.geolib = module.exports = geolib;
-
-	// AMD module
-	} 
-	// else if (typeof define === "function" && define.amd) {
-
-	// 	define("geolib", [], function () {
-	// 		return geolib; 
-	// 	});
-
-	// // we're in a browser
-	// } 
-	else {
-
-		global.geolib = geolib;
-
-	}
-´´´
+Development: it works fine (grunt hazmagia)
+Distribution: fails
