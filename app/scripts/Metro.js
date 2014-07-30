@@ -1,5 +1,6 @@
 define([
 	"jquery",
+	// "./NetworkManager",
 	"./NetworkManager",
 	/*"../bower_components/isotope/jquery.isotope",
 	"../bower_components/geolib/dist/geolib"*/

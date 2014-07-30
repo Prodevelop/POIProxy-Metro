@@ -12,7 +12,7 @@ module.exports = function (grunt) {
     // Load grunt tasks automatically
     require('load-grunt-tasks')(grunt);
     grunt.loadNpmTasks('grunt-requirejs');
-    // grunt.loadNpmTasks('grunt-bower-requirejs'); //Automagically wire-up installed Bower components into your RequireJS config
+    grunt.loadNpmTasks('grunt-bower-requirejs'); //Automagically wire-up installed Bower components into your RequireJS config
 
     // Time how long tasks take. Can help when optimizing build times
     require('time-grunt')(grunt);
@@ -26,47 +26,43 @@ module.exports = function (grunt) {
     // Define the configuration for all the tasks
     grunt.initConfig({
 
-        // // BOWER
-        // bower: {
-        //     all: {
-        //       rjsConfig: '<%= config.app %>/scripts/main.js',
-        //       options: {
-        //           // baseUrl: '<%= config.app %>/scripts'
-        //         }   
-        //     }
-        // },
+        // BOWER
+        bower: {
+            all: {
+              // rjsConfig: '<%= config.app %>/scripts/main.js',
+              rjsConfig: '<%= config.app %>/main.js',
+
+              options: {
+                  baseUrl: '<%= config.app %>'
+                }   
+            }
+        },
         
 
-        // // REQUIRE.JS config
-        // requirejs: {
+        // REQUIRE.JS config
+        requirejs: {
 
-        //     compile: {
-        //         options: {
-        //           baseUrl: '<%= config.app %>',
-        //           mainConfigFile: '<%= config.app %>/scripts/main.js',
-        //           name: 'main',
-        //           out: '<%= config.dist %>/scripts/main-built.js'
-        //         }
-        //     },
-
-        //     dist: {
-        //         options: {
-        //             // baseUrl: '<%= config.app %>',
-        //             optimize: 'none',
-        //             // // TODO: Figure out how to make sourcemaps work with grunt-usemin
-        //             // // https://github.com/yeoman/grunt-usemin/issues/30
-        //             // //generateSourceMaps: true,
-        //             // // required to support SourceMaps
-        //             // // http://requirejs.org/docs/errors.html#sourcemapcomments
-        //             // preserveLicenseComments: false,
-        //             // useStrict: true,
-        //             wrap: true,
-        //             name           : 'main',
-        //             mainConfigFile : '<%= config.app %>/scripts/main.js',
-        //             out: '<%= config.dist %>/scripts/main-built.js'    
-        //         }
-        //     }
-        // },
+            dist: {
+                options: {
+                    baseUrl: '<%= config.app %>',
+                    optimize: 'none',
+                    // // TODO: Figure out how to make sourcemaps work with grunt-usemin
+                    // // https://github.com/yeoman/grunt-usemin/issues/30
+                    // //generateSourceMaps: true,
+                    // // required to support SourceMaps
+                    // // http://requirejs.org/docs/errors.html#sourcemapcomments
+                    // preserveLicenseComments: false,
+                    // useStrict: true,
+                    // wrap: true,
+                    name           : 'main',
+                    // mainConfigFile : '<%= config.app %>/scripts/main.js',
+                    mainConfigFile : '<%= config.app %>/main.js',
+                    // out: '<%= config.dist %>/scripts/main-built.js'    
+                    out: '<%= config.dist %>/main.js'    
+                    // out: '.tmp/concat/scripts/main.js'
+                }
+            }
+        },
 
 
         // Project settings
@@ -293,28 +289,28 @@ module.exports = function (grunt) {
         // By default, your `index.html`'s <!-- Usemin block --> will take care of
         // minification. These next options are pre-configured if you do not wish
         // to use the Usemin blocks.
-        cssmin: {
-            dist: {
-                files: {
-                    '<%= config.dist %>/styles/main.css': [
-                        '.tmp/styles/{,*/}*.css',
-                        '<%= config.app %>/styles/{,*/}*.css'
-                    ]
-                }
-            }
-        },
-        uglify: {
-            dist: {
-                files: {
-                    '<%= config.dist %>/scripts/scripts.js': [
-                        '<%= config.dist %>/scripts/scripts.js'
-                    ]
-                }
-            }
-        },
-        concat: {
-            dist: {}
-        },
+        // cssmin: {
+        //     dist: {
+        //         files: {
+        //             '<%= config.dist %>/styles/main.css': [
+        //                 '.tmp/styles/{,*/}*.css',
+        //                 '<%= config.app %>/styles/{,*/}*.css'
+        //             ]
+        //         }
+        //     }
+        // },
+        // uglify: {
+        //     dist: {
+        //         files: {
+        //             '<%= config.dist %>/scripts/scripts.js': [
+        //                 '<%= config.dist %>/scripts/scripts.js'
+        //             ]
+        //         }
+        //     }
+        // },
+        // concat: {
+        //     dist: {}
+        // },
 
         // Copies remaining files to places other tasks can use
         copy: {
@@ -329,7 +325,9 @@ module.exports = function (grunt) {
                         '.htaccess',
                         'images/{,*/}*.webp',
                         '{,*/}*.html',
-                        'styles/fonts/{,*/}*.*'
+                        'styles/fonts/{,*/}*.*',
+                        'gAssets/{,*/}*.{jpg,jpeg,png,mp3}'
+                        
                     ]
                 }, {
                     expand: true,
@@ -421,7 +419,7 @@ module.exports = function (grunt) {
         'useminPrepare',
         'concurrent:dist',
         'autoprefixer',
-        // 'requirejs:dist',
+        'requirejs:dist',
         'concat',
         'cssmin',
         'uglify',

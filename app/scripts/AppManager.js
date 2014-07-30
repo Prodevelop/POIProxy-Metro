@@ -1,6 +1,8 @@
 define([
 	"jquery",
-	"./Metro"],
+	// "./Metro"
+	"./scripts/Metro"
+	],
 	function(
 		$,
 		Metro){
