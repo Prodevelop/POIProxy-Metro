@@ -25,7 +25,7 @@ A multi-platform tiles viewer of Points of Interest with photo from POIProxy
 
 There has been noticed a clear incompatibility among the latest versions of mentioned components so that distribution folder will not run properly. 
 
-Requirejs does not inyect our own modules in the single concated and minimized js file.
+Requirejs does not inject our own modules in the single concated and minimized js file.
 
 Development: it works fine (grunt hazmagia)
 Distribution: fails
