@@ -3,6 +3,10 @@ POIProxy-Metro
 
 A multi-platform tiles viewer of Points of Interest with photo from POIProxy services tagged as photo services (Flickr, Panoramio, Picasa, Instagram, ...)
 
+##Live demo
+
+http://app3.prodevelop.es/poiproxy-metro/app
+
 ##How to build a development workspace of POIProxy-Metro
 
 ***Pre-requisites***
