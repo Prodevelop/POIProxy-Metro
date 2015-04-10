@@ -2,7 +2,11 @@ require.config({
 	// baseURL:'../../../',
 	waitSeconds: 20,
 	shim: {
-
+        jquery: [],
+        isotope: ['jquery'],
+        geolib: ['jquery'],
+        imagesloaded: ['jquery'],
+        masonry: ['jquery']
 	},
 	paths: {
 		jquery: '../bower_components/jquery/dist/jquery',
