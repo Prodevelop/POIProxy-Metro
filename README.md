@@ -1,9 +1,9 @@
 POIProxy-Metro
 ==============
 
-A multi-platform tiles viewer of Points of Interest with photo from POIProxy
+A multi-platform tiles viewer of Points of Interest with photo from POIProxy services tagged as photo services (Flickr, Panoramio, Picasa, Instagram, ...)
 
-##How to build a development workspace of POIProxy-Metro (Work in progress)
+##How to build a development workspace of POIProxy-Metro
 
 ***Pre-requisites***
 
@@ -29,3 +29,7 @@ Requirejs does not inject our own modules in the single concated and minimized j
 
 Development: it works fine (grunt hazmagia)
 Distribution: fails
+
+## Screenshots
+
+<img height=400 src="https://raw.githubusercontent.com/Prodevelop/POIProxy-Metro/master/img/poiproxy-tileviewer01.png" />
